@@ -8,6 +8,10 @@ See https://github.com/BlinkDL/RWKV-LM for details.
 
 You can use the "GPT" mode to quickly build the hidden state for the "RNN" mode. (I am not doing it in the run.py here so the initial generation is slower than usual).
 
+## Fine-tuning
+
+Use prepare_data.py to tokenize your .txt into .npy, then run finetune.py to fine-tune the Pile model.
+
 ===================================================
 
 Model 20220524-4006 (see Releases):
