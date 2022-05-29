@@ -10,17 +10,22 @@ import torch.nn as nn
 
 from transformers import PreTrainedTokenizerFast
 
-RUN_DEVICE = 'cpu' # cpu cuda
-print(f'\n* running on {RUN_DEVICE}')
+# RUN_DEVICE = 'cpu' # cpu cuda
+# ctx_len = 768
+# n_layer = 12
+# n_embd = 768
 
+RUN_DEVICE = 'cpu'
 ctx_len = 768
-n_layer = 12
-n_embd = 768
+n_layer = 24
+n_embd = 1024
+
+MODEL_NAME = '20220524-4006'
 
 vocab_size = 50277
-
-MODEL_NAME = 'rwkv-v2-rnn-169m\\20220501-6548'
 VOCAB_NAME = '20B_tokenizer.json'
+
+print(f'\n* running on {RUN_DEVICE}')
 
 ################################################################################################################
 
@@ -78,7 +83,7 @@ class RWKV_TimeMix(nn.Module):
 
         kv = k * v
 
-        self.time_w = torch.cat([torch.exp(self.time_decay) * self.time_curve, self.time_first], dim=-1)
+        self.time_w = torch.cat([torch.exp(self.time_decay) * self.time_curve.to(self.time_decay.device), self.time_first], dim=-1)
         w = torch.exp(self.time_w)
         
         w = w[:,-T:].unsqueeze(1)
