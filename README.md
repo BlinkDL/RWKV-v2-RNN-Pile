@@ -12,6 +12,8 @@ You can use the "GPT" mode to quickly build the hidden state for the "RNN" mode.
 
 Use prepare_data.py to tokenize your .txt into .npy, then run finetune.py to fine-tune the Pile model.
 
+Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACKWARD in src/model_train.py to make sure they can divide batch_sz).
+
 ===================================================
 
 Model 20220524-4006 (see Releases):
