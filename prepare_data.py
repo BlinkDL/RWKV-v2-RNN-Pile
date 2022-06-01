@@ -8,8 +8,8 @@ from torch import le
 from transformers import PreTrainedTokenizerFast
 tokenizer = PreTrainedTokenizerFast(tokenizer_file='20B_tokenizer.json')
 
-input_file = 'big.txt'
-output_file = 'train2.npy'
+input_file = 'training.txt'
+output_file = 'train.npy'
 
 TASK = 'tokenize' # tokenize verify
 
