@@ -32,10 +32,6 @@ if reuse_old_chunks:
         reuse_old_chunks = False
 
 
-files = os.listdir(input_dir)
-files = [f for f in files if f.endswith('.txt')] # id-chapterid.txt
-# sort first by id, then by chapterid
-files = sorted(files, key=lambda x: (int(x.split('-')[0]), int(x.split('-')[1].split('.')[0])))
 
 
 data_code = []
@@ -53,7 +49,12 @@ if TASK == 'tokenize':
     if reuse_old_chunks:
         print("Loading old chunk data...")
     else:
-        print("Loading raw text data...")
+        print("Loading raw text data for chunking(MEMORY INTENSIVE)...")
+        files = os.listdir(input_dir)
+        files = [f for f in files if f.endswith('.txt')] # id-chapterid.txt
+        # sort first by id, then by chapterid
+        files = sorted(files, key=lambda x: (int(x.split('-')[0]), int(x.split('-')[1].split('.')[0])))
+
         # clean up old chunks
         for chunk in os.listdir(chunksDir):
             os.remove(chunksDir + chunk)    
