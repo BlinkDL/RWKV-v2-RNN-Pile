@@ -31,9 +31,6 @@ if reuse_old_chunks:
     if len(chunks) == 0:
         reuse_old_chunks = False
 
-
-
-
 data_code = []
 if TASK == 'tokenize':
     rawChunks = []
