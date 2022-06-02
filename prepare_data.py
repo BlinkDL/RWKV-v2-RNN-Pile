@@ -12,18 +12,25 @@ from threading import Thread
 tokenizer = PreTrainedTokenizerFast(tokenizer_file='20B_tokenizer.json')
 
 input_dir = './training/'
-os.makedirs(input_dir, exist_ok=True)
-output_file = 'fimfic.npy'
+chunksDir = "./training_chunks/"
+
+output_file = 'train.npy'
 
 threadCount = 1 # number of threads to use -- unfortunately, 1 seems to be the fastest on my setup. Maybe it's bottlenecked by the SSD, or the CPU? none of these threads seem to be maxing usage, so give it a shot.
 reuse_old_chunks = True
-chunksDir = "./training_chunks/"
-os.makedirs(chunksDir, exist_ok=True)
-
-keep_buffer = True
-
+chunkSize = 1000000
+keep_buffer = True # is supposed to buffer load chunks from the SSD to memory, but I'm not quite sure it's properly implemented yet. I think I'm facing a bottleneck, so I can't really test if this helps or not.
 
 TASK = 'tokenize' # tokenize verify
+
+os.makedirs(input_dir, exist_ok=True)
+os.makedirs(chunksDir, exist_ok=True)
+if reuse_old_chunks:
+    # check if we have any chunks, if not, toggle the flag back to false
+    chunks = os.listdir(chunksDir)
+    if len(chunks) == 0:
+        reuse_old_chunks = False
+
 
 files = os.listdir(input_dir)
 files = [f for f in files if f.endswith('.txt')] # id-chapterid.txt
@@ -43,7 +50,6 @@ if TASK == 'tokenize':
         data_code = data_code + tokenizer.encode(chunk)
         print(len(data_code))
         print(f'{i}:Tokenized length = {len(data_code)}')
-    chunkSize = 1000000
     if reuse_old_chunks:
         print("Loading old chunk data...")
     else:
