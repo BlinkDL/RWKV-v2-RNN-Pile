@@ -16,6 +16,20 @@ Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACK
 
 ===================================================
 
+Model 20220605-7663 (see Releases):
+
+This is a preview of a L24-D1024 RWKV-v2-RNN trained on the Pile for 235B tokens.
+
+It is NOT indicative of the final performance (which requires 300B tokens).
+
+Performance of the preview model:
+
+LAMBADA ppl 15.3 acc 42.62% (computed using https://github.com/EleutherAI/lm-evaluation-harness)
+
+The Pile loss 2.361
+
+===================================================
+
 Model 20220524-4006 (see Releases):
 
 This is a preview of a L24-D1024 RWKV-v2-RNN trained on the Pile for only 123B tokens.
@@ -27,20 +41,6 @@ Performance of the preview model:
 LAMBADA ppl 15.88 acc 42.36% (computed using https://github.com/EleutherAI/lm-evaluation-harness)
 
 The Pile loss 2.383
-
-===================================================
-
-Model 20220515-1853 (see Releases):
-
-This is a preview of a L24-D1024 RWKV-v2-RNN trained on the Pile for only 57B tokens.
-
-It is NOT indicative of the final performance (which requires 300B tokens).
-
-Performance of the preview model:
-
-LAMBADA ppl 18.63 acc 39.61% (computed using https://github.com/EleutherAI/lm-evaluation-harness)
-
-The Pile loss 2.417
 
 ===================================================
 
