@@ -19,8 +19,9 @@ Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACK
 Model 20220605-7663 (see Releases):
 
 This is a preview of a L24-D1024 RWKV-v2-RNN trained on the Pile for 235B tokens.
-
 It is NOT indicative of the final performance (which requires 300B tokens).
+
+**!!! Change 1e-9 to 1e-8 in model.py and model_train.py (RWKV_K_EPS) for this model !!!**
 
 Performance of the preview model:
 
