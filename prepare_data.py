@@ -14,7 +14,7 @@ tokenizer = PreTrainedTokenizerFast(tokenizer_file='20B_tokenizer.json')
 input_dir = './training/'
 chunksDir = "./training_chunks/"
 
-output_file = 'train.npy'
+output_file = 'fimfic.npy'
 
 threadCount = 1 # number of threads to use -- unfortunately, 1 seems to be the fastest on my setup. Maybe it's bottlenecked by the SSD, or the CPU? none of these threads seem to be maxing usage, so give it a shot.
 reuse_old_chunks = True
@@ -30,6 +30,9 @@ if reuse_old_chunks:
     chunks = os.listdir(chunksDir)
     if len(chunks) == 0:
         reuse_old_chunks = False
+
+
+
 
 data_code = []
 if TASK == 'tokenize':
@@ -48,13 +51,12 @@ if TASK == 'tokenize':
     else:
         print("Loading raw text data for chunking(MEMORY INTENSIVE)...")
         files = os.listdir(input_dir)
-        files = [f for f in files if f.endswith('.txt')] # id-chapterid.txt
-        # sort first by id, then by chapterid
-        files = sorted(files, key=lambda x: (int(x.split('-')[0]), int(x.split('-')[1].split('.')[0])))
-
+        files = [f for f in files if f.endswith('.txt')]
+        
         # clean up old chunks
         for chunk in os.listdir(chunksDir):
             os.remove(chunksDir + chunk)    
+            
         for input_file in files:
             print(f'Loading {input_file}...')
             chunk = open(input_dir + input_file).read()
