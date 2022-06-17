@@ -14,7 +14,7 @@ tokenizer = PreTrainedTokenizerFast(tokenizer_file='20B_tokenizer.json')
 input_dir = './training/'
 chunksDir = "./training_chunks/"
 
-output_file = 'fimfic.npy'
+output_file = 'train.npy'
 
 threadCount = 1 # number of threads to use -- unfortunately, 1 seems to be the fastest on my setup. Maybe it's bottlenecked by the SSD, or the CPU? none of these threads seem to be maxing usage, so give it a shot.
 reuse_old_chunks = True
