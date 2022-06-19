@@ -22,9 +22,9 @@ RWKV-2 trained with 768 ctxLen, and after 20 minutes of finetuning to 1536 ctxLe
 
 ![RWKV-ctxLen](RWKV-ctxLen.png)
 
-Therefore RWKV-2 can quickly adapt to "infinite" ctxLen (or if you use better training methods to begin with, such as 90% GPT + 10% RNN).
+Therefore RWKV-2 can quickly adapt to "infinite" ctxLen via N->2N->4N->... (or if you use better training methods to begin with, such as 90% GPT + 10% RNN).
 
-The only limiting factors is, right now I am clamping K to e^60, and this will create trouble for the model when the ctxLen is very long. It can be fixed with a better CUDA kernel.
+The only limiting factor is, right now I am clamping K to e^60, and this will create trouble for the model when the ctxLen is very long. It can be fixed with a better CUDA kernel.
 
 ===================================================
 
