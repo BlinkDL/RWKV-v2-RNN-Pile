@@ -16,6 +16,10 @@ Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACK
 
 ===================================================
 
+**The current models are trained with 768 ctxLen and they can extrapolate to 768 * 2 ctxLen. I am finetuning them to support longer ctxLen.**
+
+===================================================
+
 Model 20220615-10803 (see Releases):
 
 This is a L24-D1024 RWKV-v2-RNN trained on the Pile for 332B tokens.
