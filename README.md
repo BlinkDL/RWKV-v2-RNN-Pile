@@ -16,7 +16,7 @@ Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACK
 
 ===================================================
 
-**The current models are trained with 768 ctxLen and they can extrapolate to 768 * 2 ctxLen. I am finetuning them to support longer ctxLen.**
+**The current models are trained with 768 ctxLen and the optimal maximal ctxLen for RNN mode is around 1100 (the limiting factor is the clamp_k_to_60 operation which can be fixed with a better CUDA kernel). The positional loss goes up when ctxLen > 768 * 2. I am finetuning them to support longer ctxLen.**
 
 ===================================================
 
