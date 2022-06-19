@@ -16,7 +16,7 @@ Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACK
 
 ===================================================
 
-You can set a longer ctxLen and it can adapt (try this: 768 -> 768 * 2, train for some hours, then 768 * 2 -> 768 * 4, ...).
+You can set a longer ctxLen and it can adapt (try this: 768 -> 768 * 2, train for some hours, then 768 * 2 -> 768 * 3, ...).
 
 The current models are trained with 768 ctxLen and the optimal ctxLen for RNN mode is around 1100. The positional loss goes up when ctxLen > 768 * 2. I am finetuning them to support longer ctxLen.
 
@@ -24,7 +24,7 @@ RWKV-2 trained with 768 ctxLen, and after 20 minutes of finetuning to 1536 ctxLe
 
 ![RWKV-ctxLen](RWKV-ctxLen.png)
 
-Therefore RWKV-2 can quickly adapt to "infinite" ctxLen via N->2N->4N->... (or if you use better training methods to begin with, such as 90% GPT + 10% RNN).
+Therefore RWKV-2 can quickly adapt to "infinite" ctxLen via N->2N->3N->... (or if you use better training methods to begin with, such as 90% GPT + 10% RNN).
 
 The only limiting factor is, right now I am clamping K to e^60, and this will create trouble for the model when the ctxLen is very long. It can be fixed with a better CUDA kernel.
 
