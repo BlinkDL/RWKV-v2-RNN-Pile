@@ -31,7 +31,7 @@ Therefore RWKV-2 can quickly adapt to "infinite" ctxLen via N->2N->3N->... (or i
 
 The only limiting factor is, right now I am clamping K to e^60, and this will create trouble for the model when the ctxLen is very long. It can be fixed with a better CUDA kernel.
 
-===================================================
+## Pre-trained models
 
 Model 20220615-10803 (see Releases):
 
