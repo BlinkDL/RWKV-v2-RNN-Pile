@@ -20,7 +20,7 @@ ctx_len = 768
 n_layer = 24
 n_embd = 1024
 
-MODEL_NAME = '20220524-4006'
+MODEL_NAME = 'all-10803'
 
 vocab_size = 50277
 VOCAB_NAME = '20B_tokenizer.json'
