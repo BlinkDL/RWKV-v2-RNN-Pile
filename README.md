@@ -33,7 +33,7 @@ The only limiting factor is, right now I am clamping K to e^60, and this will cr
 
 ## Pre-trained models
 
-Model 20220615-10803 (see Releases):
+Model 20220615-10803 (see Releases, or https://huggingface.co/BlinkDL/rwkv-2-pile-430m/tree/main):
 
 This is a L24-D1024 RWKV-v2-RNN trained on the Pile for 332B tokens.
 
