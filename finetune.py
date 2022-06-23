@@ -34,10 +34,10 @@ batch_size = 8
 # you can reduce B_GROUP_FORWARD and B_GROUP_BACKWARD to make it easier to find a good batch_size for your GPU.
 # just remember B_GROUP_FORWARD=8 and B_GROUP_BACKWARD=2 is the fastest.
 
-lr_init = 2e-5
+lr_init = 1e-5
 lr_final = 1e-5
 
-n_epoch = 100 # the mini-epoch is very short and of fixed length (ctx_len * epoch_length_fixed tokens)
+n_epoch = 10000 # the mini-epoch is very short and of fixed length (ctx_len * epoch_length_fixed tokens)
 epoch_length_fixed = 10000
 
 epoch_save_frequency = 5 # 0 = never, 1 = every mini-epoch, 2 = every two mini-epochs, etc.
