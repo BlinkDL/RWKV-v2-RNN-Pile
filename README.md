@@ -8,9 +8,9 @@ See https://github.com/BlinkDL/RWKV-LM for details.
 
 You can use the "GPT" mode to quickly build the hidden state for the "RNN" mode. (I am not doing it in the run.py here so the initial generation is slower than usual).
 
-I am training a 1.5B RWKV-2+ (Search "RWKV v2+ improvements" in https://github.com/BlinkDL/RWKV-LM for details):
+I am training a 1.5B RWKV-3 (Search "RWKV-3" in https://github.com/BlinkDL/RWKV-LM for details):
 
-![RWKV-v2-1.5B-Pile](RWKV-v2-1.5B-Pile.png)
+![RWKV-v3-1.5B-Pile](RWKV-v3-1.5B-Pile.png)
 
 ## Fine-tuning
 
