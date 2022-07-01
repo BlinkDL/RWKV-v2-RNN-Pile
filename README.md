@@ -1,10 +1,12 @@
 # RWKV-v2-RNN-Pile
 
-RWKV-v2-RNN trained on the full Pile (no dev/val/test split).
+RWKV-v2-RNN trained on the full Pile (no dev/val/test split). See https://github.com/BlinkDL/RWKV-LM for details.
+
+Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1wefmCREonEWhY-zeST
+
+===================================================
 
 Training log: https://wandb.ai/blinkdl/RWKV-v2-RNN-Pile
-
-See https://github.com/BlinkDL/RWKV-LM for details.
 
 You can use the "GPT" mode to quickly build the hidden state for the "RNN" mode. (I am not doing it in the run.py here so the initial generation is slower than usual).
 
