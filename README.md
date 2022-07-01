@@ -2,6 +2,8 @@
 
 RWKV-v2-RNN trained on the full Pile (no dev/val/test split). See https://github.com/BlinkDL/RWKV-LM for details.
 
+Join our Discord! https://discord.gg/bDSBUMeFpc :)
+
 Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1wefmCREonEWhY-zeST
 
 ===================================================
