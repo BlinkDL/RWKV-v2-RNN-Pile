@@ -6,6 +6,8 @@ Join our Discord! https://discord.gg/bDSBUMeFpc :)
 
 Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1wefmCREonEWhY-zeST
 
+NOTE: currently sample_logits() in run.py runs on cpu which is very slow. Change it to cuda for extra speedup.
+
 ===================================================
 
 Training log: https://wandb.ai/blinkdl/RWKV-v2-RNN-Pile
