@@ -6,7 +6,7 @@ Join our Discord! https://discord.gg/bDSBUMeFpc :)
 
 Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1wefmCREonEWhY-zeST
 
-NOTE: currently sample_logits() in run.py runs on cpu which is very slow (sometime it's slower than the model itself!). Move it to cuda for significant speedup.
+**NOTE: currently sample_logits() in run.py runs on cpu which is very slow (sometime it's slower than the model itself!). Move it to cuda for significant speedup.**
 
 ===================================================
 
