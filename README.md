@@ -10,6 +10,11 @@ Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1we
 
 ===================================================
 
+RWKV-3 model: https://github.com/BlinkDL/RWKV-v2-RNN-Pile/tree/main/RWKV-v3
+Preview model: https://huggingface.co/BlinkDL/rwkv-3-pile-169m
+
+===================================================
+
 Training log: https://wandb.ai/blinkdl/RWKV-v2-RNN-Pile
 
 You can use the "GPT" mode to quickly build the hidden state for the "RNN" mode. (I am not doing it in the run.py here so the initial generation is slower than usual).
