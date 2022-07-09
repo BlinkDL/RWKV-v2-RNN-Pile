@@ -12,7 +12,9 @@ Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1we
 
 RWKV-3 model: https://github.com/BlinkDL/RWKV-v2-RNN-Pile/tree/main/RWKV-v3
 
-Preview model: https://huggingface.co/BlinkDL/rwkv-3-pile-169m
+Preview 1.5B model: https://huggingface.co/BlinkDL/rwkv-3-pile-1b5
+
+Preview 169M model: https://huggingface.co/BlinkDL/rwkv-3-pile-169m
 
 ===================================================
 
