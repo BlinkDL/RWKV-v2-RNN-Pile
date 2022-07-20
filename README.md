@@ -30,7 +30,15 @@ Use prepare_data.py to tokenize your .txt into .npy, then run finetune.py to fin
 
 Reduce batch_sz if you see CUDA OOM (and change B_GROUP_FORWARD and B_GROUP_BACKWARD in src/model_train.py to make sure they can divide batch_sz).
 
-===================================================
+## Improving CtxLen
+
+UPDATE: We have a new CUDA kernel in RWKV-4. Now the model can extrapolate to 3x ctxlen. And we can achieve infinite ctxlen using transformer-XL style training.
+
+An example where we only trained using ctx1024:
+
+![RWKV-4-ctxLen](RWKV-4-ctxLen.png)
+
+Old guide for RWKV-3:
 
 You can set a longer ctxLen and it can adapt (try this: 768 -> 768 * 2, train for some hours, then 768 * 2 -> 768 * 3, ...).
 
@@ -45,12 +53,6 @@ Therefore RWKV-2 can quickly adapt to "infinite" ctxLen via N->2N->3N->... (or i
 The only limiting factor is, right now I am clamping K to e^60, and this will create trouble for the model when the ctxLen is very long. It can be fixed with a better CUDA kernel.
 
 ===================================================
-
-UPDATE: We have a new CUDA kernel in RWKV-4. Now the model can extrapolate to 3x ctxlen (trained using ctx1024 here):
-
-![RWKV-4-ctxLen](RWKV-4-ctxLen.png)
-
-And we can further improve it using transformer-XL style training.
 
 ## RWKV-2 models
 
