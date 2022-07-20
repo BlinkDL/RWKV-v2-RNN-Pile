@@ -8,15 +8,13 @@ Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1we
 
 **NOTE: currently sample_logits() in run.py runs on cpu which is very slow (sometime it's slower than the model itself!). Move it to cuda for significant speedup.**
 
-===================================================
+## RWKV-3 models
 
 RWKV-3 code: https://github.com/BlinkDL/RWKV-v2-RNN-Pile/tree/main/RWKV-v3
 
 Preview 1.5B model: https://huggingface.co/BlinkDL/rwkv-3-pile-1b5
 
 Preview 169M model: https://huggingface.co/BlinkDL/rwkv-3-pile-169m
-
-===================================================
 
 Training log: https://wandb.ai/blinkdl/RWKV-v2-RNN-Pile
 
@@ -54,7 +52,7 @@ UPDATE: We have a new CUDA kernel in RWKV-4. Now the model can extrapolate to 3x
 
 And we can further improve it using transformer-XL style training.
 
-## Pre-trained models
+## RWKV-2 models
 
 Model 20220615-10803 (see Releases, or https://huggingface.co/BlinkDL/rwkv-2-pile-430m/tree/main):
 
