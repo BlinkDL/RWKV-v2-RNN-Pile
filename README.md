@@ -8,6 +8,12 @@ Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1we
 
 **NOTE: currently sample_logits() in run.py runs on cpu which is very slow (sometime it's slower than the model itself!). Move it to cuda for significant speedup.**
 
+## RWKV-4 models
+
+Models: https://huggingface.co/BlinkDL
+
+Code: https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v4
+
 ## RWKV-3 models
 
 RWKV-3 code: https://github.com/BlinkDL/RWKV-v2-RNN-Pile/tree/main/RWKV-v3
