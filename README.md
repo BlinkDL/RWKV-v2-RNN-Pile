@@ -10,7 +10,7 @@ Colab for fine-tuning: https://colab.research.google.com/drive/1BwceyZczs5hQr1we
 
 ## RWKV-4 models
 
-Models: https://huggingface.co/BlinkDL
+Models: https://huggingface.co/BlinkDL now with 169M, 430M, 1.5B
 
 Code: https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v4
 
