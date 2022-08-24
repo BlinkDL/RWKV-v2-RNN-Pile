@@ -14,6 +14,8 @@ Models: https://huggingface.co/BlinkDL now with 169M, 430M, 1.5B
 
 Code: https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v4
 
+![RWKV-v4-1.5B-Pile](RWKV-v4-1.5B-Pile.png)
+
 ## RWKV-3 models
 
 RWKV-3 code: https://github.com/BlinkDL/RWKV-v2-RNN-Pile/tree/main/RWKV-v3
